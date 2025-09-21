@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "Custom new tab homepage",
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "https://ansabazys.github.io/homepage/"
   },
   "permissions": []
 }
