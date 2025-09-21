@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zalando Sans Expanded", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 3rem;
+}
+
+#time{
+    font-size: 9rem;
+    font-weight: bold;
+}
+
+.time__container {
+    grid-area: 2 / 1 / 4 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quotes__container {
+    grid-area: 1 / 2 / 1 / 4;
+    display: flex;
+    text-align: end;
+    justify-content: start;
+    flex-direction: column;
+    align-items: end;
+}
+
+.quotes__container p {
+    width: 400px;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+
+.quotes__container span {
+    color: gray;
+}
+
+.links {
+    grid-area: 4 / 2 / 5 /3;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: end;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.icons {
+    grid-area: 4 / 3/ 5/ 4;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.timer__container {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    gap: 3rem;
+}

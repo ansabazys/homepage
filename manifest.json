@@ -1,10 +1,9 @@
-    {
-  "manifest_version": 3,
-  "name": "Flocus Homepage",
+{
+  "name": "My Custom New Tab",
+  "description": "Overrides the default Chrome New Tab page with a custom one.",
   "version": "1.0",
-  "description": "Custom new tab homepage",
+  "manifest_version": 3,
   "chrome_url_overrides": {
-    "newtab": "https://ansabazys.github.io/homepage/"
-  },
-  "permissions": []
+    "newtab": "index.html"
+  }
 }

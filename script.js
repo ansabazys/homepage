@@ -1,3 +1,16 @@
+let quotes = document.getElementById("quotes");
+
+fetch("https://randominspirationalquotes.onrender.com")
+  .then((response) => response.json())
+  .then((data) => {
+    quotes.textContent = `"${data.quote}"`;
+    quotes.nextElementSibling.textContent = data.author;
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+
+  
+
+
 // Clock and greeting
 function updateTime() {
   const timeEl = document.getElementById("time");
@@ -5,17 +18,16 @@ function updateTime() {
   const now = new Date();
 
   let formatter = new Intl.DateTimeFormat("en-US", {
-    hour: "2-digit",
+    hour: "numeric",
     minute: "2-digit",
     hour12: true, // This ensures 12-hour format with AM/PM
   });
 
   let formattedTime = formatter.format(now);
-  console.log(formattedTime); // Example output: 01:24 PM
 
   const hours = now.getHours();
 
-  timeEl.textContent = formattedTime.replace(/ (AM|PM)$/, '');
+  timeEl.textContent = formattedTime.replace(/ (AM|PM)$/, "");
 
   if (hours < 12) {
     greetingEl.textContent = "Good Morning";
@@ -28,22 +40,3 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
-
-// Search functionality
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
-
-searchBtn.addEventListener("click", () => {
-  const query = searchInput.value.trim();
-  if (query) {
-    if (query.startsWith("http")) {
-      window.open(query, "_blank");
-    } else {
-      window.open(`https://www.google.com/search?q=${query}`, "_blank");
-    }
-  }
-});
-
-searchInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") searchBtn.click();
-});
