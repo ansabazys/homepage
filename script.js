@@ -28,14 +28,6 @@ function updateTime() {
   const hours = now.getHours();
 
   timeEl.textContent = formattedTime.replace(/ (AM|PM)$/, "");
-
-  if (hours < 12) {
-    greetingEl.textContent = "Good Morning";
-  } else if (hours < 18) {
-    greetingEl.textContent = "Good Afternoon";
-  } else {
-    greetingEl.textContent = "Good Evening";
-  }
 }
 
 setInterval(updateTime, 1000);
